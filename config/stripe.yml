@@ -1,0 +1,7 @@
+def self.stripe_api_key
+  STRIPE_CONFIG['pk_test_LKDzCsEwekIqKLear1qql8qo']
+end
+
+def self.stripe_api_secret
+  STRIPE_CONFIG['sk_test_QxRSGkjGBDLQXdT4bd9YPSiR']
+end
