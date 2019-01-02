@@ -1,14 +1,14 @@
 class ChargesController < ApplicationController
   Stripe.api_key = Rails.application.secrets.stripe_secret_key
   before_action :authenticate_user!
-  # before_action :find_product
+  before_action :find_product
 
   def new
   end
 
   def create
     #Amont in cents
-    @amount = 500
+    # @amount = 500
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer     => customer.id,
-      :amount       => @amount,
+      :amount       => @product.price.to_i,
       :description  => 'Rails Stripe customer',
       :currency     => 'usd'
     )

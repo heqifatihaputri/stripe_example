@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :credit_cards
-  resources :products
+  resources :products do
+   resources :charges
+  end
   root 'products#index'
   resources :charges, only: [:new, :create]
  
