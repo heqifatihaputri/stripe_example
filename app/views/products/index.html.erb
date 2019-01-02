@@ -1,8 +1,16 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
+<div>
+  <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> <br>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+</div>
 <h1>Listing Products</h1>
 
-<table>
+<table border="1" width="50%">
   <thead>
     <tr>
       <th>Name</th>
@@ -27,3 +35,5 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<br>
+<%= link_to 'Create Credit Card ' %>
