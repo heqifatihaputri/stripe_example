@@ -7,9 +7,8 @@ class ChargesController < ApplicationController
   end
 
   def create
-    debugger
     #Amont in cents
-    # @amount = 500
+    @amount = 500
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -18,7 +17,7 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer     => customer.id,
-      :amount       => @product.price,
+      :amount       => @amount,
       :description  => 'Rails Stripe customer',
       :currency     => 'usd'
     )
@@ -31,7 +30,7 @@ class ChargesController < ApplicationController
   end
   
   def find_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
     # rescue ActiveRecord::RecordNotFound => e
     #   flash[:error] = 'Product not found!'
     # end
