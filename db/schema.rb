@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190102063308) do
+ActiveRecord::Schema.define(version: 20190103021856) do
 
   create_table "credit_cards", force: :cascade do |t|
     t.string   "digits"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20190102063308) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "customer_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

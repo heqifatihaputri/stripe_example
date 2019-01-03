@@ -35,6 +35,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    annotate (2.7.4)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (6.0.4)
     bcrypt (3.1.12)
     better_errors (2.5.0)
@@ -86,6 +89,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    method_source (0.9.2)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -96,6 +100,11 @@ GEM
     nokogiri (1.9.1)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     rack (1.6.11)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -180,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   better_errors
   binding_of_caller
   byebug
@@ -187,6 +197,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  pry-rails
   rails (= 4.2.10)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
