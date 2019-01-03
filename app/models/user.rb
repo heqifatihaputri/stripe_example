@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :products
   validates :email, presence: true
 
-  # has_many :credit_cards, dependent: :destroy
  
   # after_commit :assign_customer_id, on: :create
   after_create :assign_customer_id

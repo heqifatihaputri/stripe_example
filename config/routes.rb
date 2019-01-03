@@ -3,12 +3,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :products
-  resources :credit_cards
   resources :products do
    resources :charges
   end
   root 'products#index'
   resources :charges, only: [:new, :create]
+  resources :credit_card
  
   # mount StripeEvent::Engine, at: '/payments'
   # The priority is based upon order of creation: first created -> highest priority.

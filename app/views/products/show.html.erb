@@ -24,6 +24,7 @@
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_LKDzCsEwekIqKLear1qql8qo"
+          data-email="<%= current_user.email %>"
           data-description="A month's subscription"
           data-amount="<%= @product.price %>"
           data-locale="auto"></script>
