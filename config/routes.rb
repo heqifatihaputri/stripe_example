@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-      sessions: 'users/registrations'
-    }
-
+    registrations: 'users/registrations'
+  }
+  resources :products
   resources :credit_cards
   resources :products do
    resources :charges
