@@ -1,0 +1,14 @@
+https://github.com/heqifatihaputri/stripe_example.git
+
+* Harga sesuai product v
+* User harus punya field customer_id v
+* Setelah sign up, masuk ke index product v
+* Add customer untuk current user tanpa source v
+
+* Charge menggunakan customer_id sesuai user, 
+  - Klau cutomer belum punya card atau source, keluar modal untuk nambahin source ke customer, 
+  - klau ada lsg charge pke customer dia sendiri
+  - add card ke customer yg aktif(customer yg tersimpan di user)
+* Jika customer_id kosong, maka buat dulu customer di stripe dengan email user itu sendiri
+* Indentasi di rapikan
+* Kode charge pindahin ke model
