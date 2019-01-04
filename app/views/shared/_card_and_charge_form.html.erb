@@ -1,4 +1,4 @@
-<%= form_for current_user.credit_cards.new, url: charges_path do |f| %>
+<%= form_for current_user.credit_card.new, url: charges_path do |f| %>
   <%= hidden_field_tag :product_id, product.id %>
  
   <%= render 'shared/form_errors', f: @card if @card.present? %>

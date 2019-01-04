@@ -10,25 +10,14 @@
   <%= @product.price %>
 </p>
 
-<%= form_tag charges_path(product_id: @product.id) do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @product.price %></span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_LKDzCsEwekIqKLear1qql8qo"
-          data-email="<%= current_user.email %>"
-          data-description="A month's subscription"
-          data-amount="<%= @product.price %>"
-          data-locale="auto"></script>
+<br>
+ 
+<% if current_user.credit_card.reject{ |card| card.new_record? }.any? %>
+  <%= render 'shared/charge_form', product: @product %>
+<% else %>
+	<%= link_to "Create Credit Card", new_credit_card_path %>
 <% end %>
 
+<br>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
