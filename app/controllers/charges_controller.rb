@@ -28,8 +28,5 @@ class ChargesController < ApplicationController
   
   def find_product
     @product = Product.find(params[:product_id])
-    # rescue ActiveRecord::RecordNotFound => e
-    #   flash[:error] = 'Product not found!'
-    # end
   end
 end
