@@ -27,8 +27,10 @@ gem 'devise'
 gem 'stripe'
 
 gem 'bootstrap'
-gem 'bootstrap-sass'
 gem 'popper_js'
+gem "paperclip", "~> 4.1"
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

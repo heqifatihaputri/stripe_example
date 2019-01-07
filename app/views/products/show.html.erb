@@ -10,9 +10,13 @@
   <%= @product.price %>
 </p>
 
+<p>
+	<strong>Price:</strong>
+	<%= image_tag @product.image.url(:thumb) %>
+</p>
 <br>
  
-<% if current_user.credit_card.reject{ |card| card.new_record? }.any? %>
+<% if current_user.credit_cards.reject{ |card| card.new_record? }.any? %>
   <%= render 'shared/charge_form', product: @product %>
 <% else %>
 	<%= link_to "Create Credit Card", new_credit_card_path %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'uploads/new'
+
+  get 'uploads/create'
+
   resources :credit_cards
   devise_for :users, controllers: {
     registrations: 'users/registrations'
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :charges, only: [:new, :create]
   resources :credit_card
- 
+  resources :uploads, only: [:new, :create]
   # mount StripeEvent::Engine, at: '/payments'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
