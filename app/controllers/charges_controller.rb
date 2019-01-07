@@ -7,6 +7,7 @@ class ChargesController < ApplicationController
   end
 
   def create
+    # @charge = Charge.new
     charge = Stripe::Charge.create(
       :customer     => current_user.customer_id,
       :amount       => @product.price_in_cents,

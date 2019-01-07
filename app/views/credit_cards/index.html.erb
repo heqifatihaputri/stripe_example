@@ -32,7 +32,7 @@
 
 <br>
 
-<% unless current_user.credit_card.present? %>
+<% unless current_user.credit_cards.present? %>
   <%= link_to 'New Credit card', new_credit_card_path %>
 <% end %>
 

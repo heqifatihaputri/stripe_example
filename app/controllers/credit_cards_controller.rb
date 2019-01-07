@@ -5,7 +5,7 @@ class CreditCardsController < ApplicationController
   # GET /credit_cards
   # GET /credit_cards.json
   def index
-    @credit_cards = current_user.credit_card.all
+    @credit_cards = current_user.credit_cards
   end
 
   # GET /credit_cards/1
@@ -15,7 +15,7 @@ class CreditCardsController < ApplicationController
 
   # GET /credit_cards/new
   def new
-    @credit_card = current_user.credit_card.build
+    @credit_card = current_user.credit_cards.build
   end
 
   # GET /credit_cards/1/edit
@@ -25,7 +25,7 @@ class CreditCardsController < ApplicationController
   # POST /credit_cards
   # POST /credit_cards.json
   def create
-    @credit_card = current_user.credit_card.build(credit_card_params)
+    @credit_card = current_user.credit_cards.build(credit_card_params)
 
     respond_to do |format|
       if @credit_card.save
